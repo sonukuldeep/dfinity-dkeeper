@@ -6,7 +6,11 @@
 Dfinity v0.17.0 and Reactjs v18.2.0
 
 ## Intro
-This project follows Angella Yu web development course section 434-437. Seperate branch for each section is created.
+This project follows Angella Yu web development course section 434-437. 
+
+Seperate branch for each section is created.
+
+So if you can't to download/clone a specific lesson please whose the appropriate branch hit clone/download zip
 
 ## How to make it work?
 1. Install Nodejs v16.0.0 or higher.
