@@ -10,12 +10,16 @@ actor DKeeper {
 
   // https://internetcomputer.org/docs/current/motoko/main/base/List/
   var notes : List.List<Note> = List.nil<Note>();
+
   public func createNote(titleText : Text, contentText : Text) {
     let newNote : Note = {
       title = titleText;
       content = contentText;
     };
     notes := List.push(newNote, notes);
-    Debug.print(debug_show (notes));
+  };
+
+  public query func readNotes() : async [Note] {
+    return List.toArray(notes);
   };
 };
