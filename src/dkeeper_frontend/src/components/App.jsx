@@ -30,6 +30,7 @@ function App() {
         return index !== id;
       });
     });
+    dkeeper_backend.removeNode(id)
   }
 
   return (

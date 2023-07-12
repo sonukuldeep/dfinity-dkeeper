@@ -9,17 +9,23 @@ actor DKeeper {
   };
 
   // https://internetcomputer.org/docs/current/motoko/main/base/List/
-  var notes : List.List<Note> = List.nil<Note>();
+  stable var notes : List.List<Note> = List.nil<Note>();
 
-  public func createNote(titleText : Text, contentText : Text) {
+  public func createNote(titleText : Text, contentText : Text) : async () {
     let newNote : Note = {
       title = titleText;
       content = contentText;
     };
-    notes := List.push(newNote, notes);
+    notes := List.push<Note>(newNote, notes);
   };
 
   public query func readNotes() : async [Note] {
-    return List.toArray(notes);
+    return List.toArray<Note>(notes);
+  };
+
+  public func removeNode(id : Nat) : async () {
+    var listFront = List.take<Note>(notes, id);
+    var listBack = List.drop<Note>(notes, id +1);
+    notes := List.append<Note>(listFront, listBack);
   };
 };
