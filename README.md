@@ -10,7 +10,7 @@ This project follows Angella Yu web development course section 434-437.
 
 Seperate branch for each section is created.
 
-So if you can't to download/clone a specific lesson please whose the appropriate branch hit clone/download zip
+So if you want to download/clone a specific lesson please whose the appropriate branch hit clone/download zip.
 
 ## How to make it work?
 1. Install Nodejs v16.0.0 or higher.
